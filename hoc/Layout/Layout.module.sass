@@ -1,0 +1,50 @@
+$black: #162612
+    
+.layout
+    font-size: 14px
+    color: $black
+
+.production
+    margin-bottom: 30px
+    text-align: center
+    a
+        display: inline-block
+        opacity: 0.15
+        &:hover
+            opacity: 1
+
+
+.back_to_top
+    position: fixed
+    display: none
+    bottom: 20px
+    left: 20px
+    width: 100px
+    top: 20px
+    line-height: 30px
+    align-items: center
+    justify-content: center
+    font-size: 18px
+    background: rgba(135, 181, 80, 0.05)
+    color: rgba(135, 181, 80, 0.25)
+    border-radius: 10px
+    cursor: pointer
+    z-index: 99
+    &:hover
+        background: rgba(135, 181, 80, 0.1)
+        color: rgba(135, 181, 80, 0.75)
+
+@media (max-width: 1400px)
+    .back_to_top
+        width: 50px
+
+@media (max-width: 576px)
+    .back_to_top
+        background: rgba(135, 181, 80, 0.25)
+        color: rgba(135, 181, 80, 0.5)
+        top: unset
+        width: unset
+        height: 50px
+        right: 20px
+    .layout
+        padding-bottom: 60px

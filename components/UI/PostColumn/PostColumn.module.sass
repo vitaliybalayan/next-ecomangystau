@@ -1,0 +1,54 @@
+$black: #162612
+$green: #87B550
+$dark-green: #39642F
+
+
+.article
+    color: $black
+    padding: 20px
+    box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.03)
+    border-radius: 0px 10px
+    background: white
+    transition: all 175ms cubic-bezier(.19,1,.22,1)
+    &:hover
+        transform: translateY(-3px)
+        box-shadow: 0px 3px 5px rgba(57, 100, 47, 0.07)
+
+.image
+    height: 180px
+    width: 100%
+    border-radius: 0px 10px
+    overflow: hidden
+    margin-bottom: 18px
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.title
+    display: flex
+    align-items: center
+    font-weight: 500
+    font-size: 18px
+    line-height: 150%
+    margin-bottom: 10px
+    margin-top: 0
+    height: 54px
+    &:hover
+        color: $green
+
+.desc
+    font-weight: normal
+    font-size: 14px
+    line-height: 150%
+    opacity: 0.5
+    height: 63px
+    margin-bottom: 20px
+    margin-top: 0
+
+.date
+    margin: 0
+    color: $dark-green
+    opacity: 0.5
+    font-size: 12px
+    line-height: 100%

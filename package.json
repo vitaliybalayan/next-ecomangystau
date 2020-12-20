@@ -1,0 +1,27 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^10.0.0",
+    "nextjs-progressbar": "0.0.7",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-faq-component": "^1.2.1",
+    "react-modal-image": "^2.5.0",
+    "react-modal-video": "^1.2.6",
+    "react-slick": "^0.27.13",
+    "sass": "^1.30.0",
+    "swiper": "^6.4.5"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.5.0"
+  }
+}
