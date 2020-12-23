@@ -14,13 +14,13 @@ function Layout(props) {
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css" />
 			</Head>
 
-			<Header menuUp={props.menus.up} menuCategories={props.menus.categories} />
+			<Header menuUp={props.layout.up} menuCategories={props.layout.categories} />
 
 			<main className={classes.content}>
 				{ props.children }
 			</main>
 
-			<Footer data={ props.footer } />
+			<Footer data={ props.email } />
 
 			<div className={classes.production} id={'prod'}>
 				<a href="https://parallax.pro/" rel="noopener noreferrer" target={'_blank'}>
@@ -28,11 +28,6 @@ function Layout(props) {
 				</a>
 			</div>
 			<span className={classes.back_to_top} id={'back_to_top'} title="Наверх">&uarr;</span> 
-			<div className="container">
-				<div className="d-flex justify-content-center pb-4">
-		            <div id="ytWidget"></div><script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=ru&widgetTheme=light&autoMode=false" type="text/javascript"></script>
-				</div>
-			</div>
 		</div>
 	)
 }

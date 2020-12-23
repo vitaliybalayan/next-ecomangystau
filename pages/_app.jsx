@@ -24,7 +24,7 @@ export default class MyApp extends App {
         
         return (
             <Container>
-                <Layout menus={ pageProps.menus } footer={pageProps.footer}>
+                <Layout layout={pageProps.layout} >
                     <NextNprogress color="#87B550" startPosition={0.4} stopDelayMs={200} height="2" showSpinner="false" options={{ showSpinner: false }} />
                     <Component {...pageProps} />
                 </Layout>

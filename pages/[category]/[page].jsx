@@ -69,14 +69,13 @@ function Page({ page }) {
 }
 
 export async function getServerSideProps(ctx) {
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-	const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
+	const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
 	
 	const response	= await fetch(`${process.env.API_URL}/api/c/article/${ctx.query.category}/${ctx.query.page}`)
 	const page		= await response.json()
 
 	// Pass data to the page via props
-	return { props: {menus, footer, page} }
+	return { props: {layout, page} }
 }
 
 export default Page

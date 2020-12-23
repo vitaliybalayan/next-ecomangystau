@@ -29,13 +29,12 @@ function Index({ services }) {
 }
 
 export async function getServerSideProps() {  
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-	const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
+    const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
 
 	const response	= await fetch(`${process.env.API_URL}/api/c/services`)
 	const services	= await response.json()
 
-	return { props: { services, menus, footer } }
+	return { props: { services, layout } }
 }
 
 export default Index

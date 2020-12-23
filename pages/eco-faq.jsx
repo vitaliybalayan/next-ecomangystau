@@ -83,15 +83,14 @@ class AccordionItem extends React.Component {
     }
   }
 
-export async function getServerSideProps() {  
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-	const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
+export async function getServerSideProps() {    
+  const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
 
 	const response	= await fetch(`${process.env.API_URL}/api/eco-faq`)
 	const results	= await response.json()
 
 	// Pass data to the page via props
-	return { props: { results, menus, footer } }
+	return { props: { results, layout } }
 }
 
 export default FAQ

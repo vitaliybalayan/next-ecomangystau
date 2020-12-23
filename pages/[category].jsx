@@ -114,14 +114,14 @@ function Category({ category }) {
 }
 
 export async function getServerSideProps(ctx) {
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-	const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
+
+	const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
 	
 	const response	= await fetch(`${process.env.API_URL}/api/c/info/${ctx.query.category}`)
     const category	= await response.json()
     
 	// Pass data to the page via props
-	return { props: {menus, footer, category} }
+	return { props: {layout, category} }
 }
 
 

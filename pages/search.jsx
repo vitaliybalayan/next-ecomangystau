@@ -74,15 +74,13 @@ function Search({ results }) {
 }
 
 export async function getServerSideProps(ctx) {  
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-    const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
-    
+	const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()   
     const query     = ctx.query['v']
 	const response	= await fetch(`${process.env.API_URL}/api/search?v=${encodeURIComponent(query)}`)
     const results	= await response.json()
     
 	// Pass data to the page via props
-	return { props: { menus, footer, results } }
+	return { props: { layout, results } }
 }
 
 export default Search

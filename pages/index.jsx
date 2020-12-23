@@ -69,14 +69,13 @@ function Index({ home }) {
 }
 
 export async function getServerSideProps() {  
-	const menus		= await (await fetch(`${process.env.API_URL}/api/menu/up`)).json()
-	const footer	= await (await fetch(`${process.env.API_URL}/api/footer`)).json()
+	const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
 
 	const response	= await fetch(`${process.env.API_URL}/api/home`)
 	const home		= await response.json()
 
 	// Pass data to the page via props
-	return { props: { home, menus, footer } }
+	return { props: { home, layout } }
 }
 
 export default Index
