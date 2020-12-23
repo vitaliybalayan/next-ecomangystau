@@ -20,7 +20,7 @@ function Layout(props) {
 				{ props.children }
 			</main>
 
-			<Footer data={ props.email } />
+			<Footer data={ props.layout.email } />
 
 			<div className={classes.production} id={'prod'}>
 				<a href="https://parallax.pro/" rel="noopener noreferrer" target={'_blank'}>

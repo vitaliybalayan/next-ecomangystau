@@ -15,7 +15,7 @@ function Footer(props) {
                             </div>
                             <div className={classes.block_footer}>
                                 <div className="row align-items-center">
-                                    <div className="col-6"><p>Свяжитесь с нами: <a href={`mailto:${props.email}`}>{ props.email }</a></p></div>
+                                    <div className="col-6"><p>Свяжитесь с нами: <a href={`mailto:${props.data}`}>{ props.data }</a></p></div>
                                     <div className="col-6 justify-content-end d-flex">
                                         <a href="https://www.facebook.com/ecomangystau.kz/" rel="noopener noreferrer" target={'_blank'} className={classes.s_link}><div className={classes.i_facebook}></div></a>
                                         <a href="https://www.instagram.com/ekomangystau/" rel="noopener noreferrer" target={'_blank'} className={classes.s_link}><div className={classes.i_instagram}></div></a>
