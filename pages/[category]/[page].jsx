@@ -30,6 +30,14 @@ function Page({ page }) {
 		}
 	}
 
+	const iframe = () => {
+		if (page.iframe) {
+			return <div className={'d-flex justify-content-center mb-5'} dangerouslySetInnerHTML={{__html: page.iframe}}></div>
+		} else {
+			return ''
+		}
+	}
+
 	return (
 		<article className={classes.body}>
 
@@ -53,6 +61,8 @@ function Page({ page }) {
 						{ page.gallery ? <Gallery images={ page.gallery } /> : '' }
 					</div>
 				</div>
+
+				{ iframe() }
 
 				<div className="row">
 					<div className="col-md-10 m-auto">
