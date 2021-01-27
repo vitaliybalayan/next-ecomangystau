@@ -297,3 +297,19 @@ ol, ul {
 	}
 }
 
+@media (max-width: 1200px) {
+	#ytWidget {
+		position: unset;
+		top: unset;
+		right: unset;
+		transform: unset;
+		text-align: center;
+		margin-top: 20px;
+	}
+	.yt-button_type_left {
+		display: unset !important;
+	}
+	#yt-widget .yt-button_type_left {
+		padding: 8px 8px 9px 36px;
+	}
+}
