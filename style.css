@@ -272,8 +272,8 @@ ol, ul {
 @media (max-width: 1480px) {
 	#ytWidget {
 		position: absolute;
-		right: 50px;
-		top: 20px;
+		right: 20px;
+		top: 30px;
 	}
 }
 
