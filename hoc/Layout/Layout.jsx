@@ -28,6 +28,17 @@ function Layout(props) {
 				</a>
 			</div>
 			<span className={classes.back_to_top} id={'back_to_top'} title="Наверх">&uarr;</span>
+
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMNHHY9BCM"></script>
+			<script
+				dangerouslySetInnerHTML={{
+				__html: `window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+			  
+				gtag('config', 'G-JMNHHY9BCM');`
+				}}
+          	/>
 		</div>
 	)
 }
