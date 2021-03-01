@@ -1,5 +1,6 @@
 import '../style.css'
 import 'swiper/swiper.scss'
+import '../node_modules/react-modal-video/scss/modal-video.scss'
 import App, { Container }              from 'next/app'
 import Layout           from '../hoc/Layout/Layout'
 import NextNprogress    from 'nextjs-progressbar'

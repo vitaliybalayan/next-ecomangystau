@@ -9,6 +9,12 @@ function Content(props) {
                 if (block.type === 'paragraph') {
                     return <div className={'col-md-10 m-auto'} key={index}><p dangerouslySetInnerHTML={{__html: block.data.text}}></p></div>
                 }
+
+                if (block.type === 'embed') {
+                    return <div className={'col-md-10 m-auto'} key={index}>
+                        <iframe src={ block.data.embed } frameborder="0" width="100%" height="400"></iframe>
+                    </div>
+                }
                 
                 if (block.type === 'list') {
                     var tag;
