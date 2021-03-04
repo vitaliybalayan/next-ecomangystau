@@ -84,8 +84,6 @@ export async function getServerSideProps(ctx) {
 	const response	= await fetch(`${process.env.API_URL}/api/c/article/${ctx.query.category}/${ctx.query.page}`)
 	const page		= await response.json()
 
-	console.log(page);
-
 	// Pass data to the page via props
 	return { props: {layout, page} }
 }
