@@ -7,7 +7,6 @@ import Callback         from '../../components/Callback/Callback'
 import Content          from '../../components/Content/Content'
 
 function Index({ services, article }) {
-    console.log(article)
     return (
         <div className={categoryClasses.body}>
 

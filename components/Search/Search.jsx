@@ -6,7 +6,6 @@ function Search({ router }) {
     
     const _handleKeyDown = e => {
         if (e.key === 'Enter' && e.target.value !== '') {
-            // console.log(router)
 			router.push(`/search?v=${e.target.value}`);
 		}
     }

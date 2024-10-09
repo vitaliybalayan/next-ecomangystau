@@ -11,7 +11,6 @@ function PostMinifyColumn(props) {
     function _handleClick(event, link) {
         event.preventDefault();
         router.push(link)
-        // console.log(link)
     }
 
     return (

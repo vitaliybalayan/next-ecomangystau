@@ -11,8 +11,6 @@ import NotFound         from '../components/NotFound/NotFound'
 
 function Category({ category }) {
 
-    // console.log(category)
-
     if (typeof(category.original) != "undefined") {
         if (category.original.status === 404) {
             return <NotFound />

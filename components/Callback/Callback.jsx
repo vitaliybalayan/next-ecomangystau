@@ -30,7 +30,6 @@ function Callback() {
         }
 
         axios.post(process.env.API_URL + '/api/callback', data).then(response => {
-            // console.log(response.data)
             alert(response.data.text)
 
             setName('')

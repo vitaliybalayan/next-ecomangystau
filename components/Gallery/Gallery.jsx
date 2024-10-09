@@ -2,7 +2,6 @@ import Img	 		from "react-modal-image"
 import classes      from './Gallery.module.sass'
 
 function Gallery(props) {
-    console.log('Галерея —', props)
     return (
         <div className="col-md-12">
             <div className={classes.block}>
