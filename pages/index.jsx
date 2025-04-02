@@ -39,7 +39,7 @@ function Index({ home }) {
 								<div className={classes.banner_slider}>
 									<Swiper {...paramsSlider}>
 										{ home.slides.map((slide, index) => {
-											return <SwiperSlide key={index}><a href={slide.link} className={classes.banner}><img src={slide.image} alt={slide.name} /></a></SwiperSlide> 
+											return <SwiperSlide key={index}><a href={slide.link} className={classes.banner}><img src={`${process.env.NEXT_PUBLIC_API_URL}${slide.image}`} alt={slide.name} /></a></SwiperSlide> 
 										}) }
 									</Swiper>
 								</div>

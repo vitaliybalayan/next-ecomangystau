@@ -26,7 +26,7 @@ function Category({ category }) {
     const [currentSlug, setCurrentSlug]		= useState()
     
     function getData() {
-		axios.get(`//storage.ecomangystau.kz/api/c/articles/` + router.query.category + `?page=1`)
+		axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/c/articles/` + router.query.category + `?page=1`)
 			.then(response => {
 				setArticles(response.data.articles)
 				setLastPage(response.data.pagination.lastPage + 1)
@@ -42,7 +42,7 @@ function Category({ category }) {
 	useEffect(() => {
 		if (fetching) {
 			if (lastPage !== currentPage) {
-				axios.get(`//storage.ecomangystau.kz/api/c/articles/` + router.query.category + `?page=${currentPage}`)
+				axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/c/articles/` + router.query.category + `?page=${currentPage}`)
                     .then(response => {
                         setArticles(articles => [...articles, ...response.data.articles])
                         setLastPage(response.data.pagination.lastPage + 1)
@@ -90,7 +90,7 @@ function Category({ category }) {
                                 return (
                                     <div className="col-xl-4 col-md-6" key={article.id}>
                                         <div className={classes.post}>
-                                            <PostColumn to={ article.url } image={ article.image } title={article.title} desc={article.desc} date={article.footer} />
+                                            <PostColumn to={ article.url } image={ `${process.env.NEXT_PUBLIC_API_URL}${article.image}` } title={article.title} desc={article.desc} date={article.footer} />
                                         </div>
                                     </div>
                                 )
@@ -98,7 +98,7 @@ function Category({ category }) {
                                 return (
                                     <div className="col-xl-4 col-md-6" key={article.id}>
                                         <div className={classes.post_video}>
-                                            <PostVideo image={ article.image } title={ article.title } video={ article.video } />
+                                            <PostVideo image={ `${process.env.NEXT_PUBLIC_API_URL}${article.image}` } title={ article.title } video={ article.video } />
                                         </div>
                                     </div>
                                 )

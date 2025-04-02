@@ -9,10 +9,11 @@ function Gallery(props) {
                 <div className="row">
 
                     { props.images.map((image, index) => {
+                        const imageUrl = `${process.env.NEXT_PUBLIC_API_URL}${image.src}`;
                         return (
                             <div className={'col-md-3'} key={index}>
                                 <figure className={classes.image}>
-                                    <p><Img small={ image.src } large={ image.src } alt={ props.title } /></p>
+                                    <p><Img small={imageUrl} large={imageUrl} alt={ props.title } /></p>
                                 </figure>
                             </div>
                         )

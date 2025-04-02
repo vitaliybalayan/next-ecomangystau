@@ -42,7 +42,7 @@ function Content(props) {
                     return (
                         <div className={ Class } key={index}>
                             <figure className={classes.figure}>
-                                <p className={classes.image}><Image small={ '//storage.ecomangystau.kz' + block.data.file.url } large={ '//storage.ecomangystau.kz' + block.data.file.url } alt={ block.data.caption } /></p>
+                                <p className={classes.image}><Image small={`${process.env.NEXT_PUBLIC_API_URL}${block.data.file.url}`} large={`${process.env.NEXT_PUBLIC_API_URL}${block.data.file.url}`} alt={ block.data.caption } /></p>
                                 <p className={classes.image_caption} dangerouslySetInnerHTML={{__html: block.data.caption}}></p>
                             </figure>
                         </div>

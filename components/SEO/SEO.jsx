@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 function SEO(props) {
     const router = useRouter()
-    const URL = `${process.env.APP_URL}${router.asPath}`
+    const URL = `${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`
 
     return (
         <Head>

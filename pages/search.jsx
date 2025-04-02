@@ -17,7 +17,7 @@ function Search({ results }) {
                     if (page.type === 'Article') {
                         return <div className={'col-md-4'} key={index}>
                             <div className={classes.block}>
-                                <PostColumn to={ page.url } title={ page.title } image={ page.image } desc={ page.desc } date={ page.footer }/>
+                                <PostColumn to={ page.url } title={ page.title } image={ `${process.env.NEXT_PUBLIC_API_URL}${page.image}` } desc={ page.desc } date={ page.footer }/>
                             </div>
                         </div>
                     }
@@ -25,7 +25,7 @@ function Search({ results }) {
                     if (page.type === 'Video') {
                         return <div className={'col-md-4'} key={index}>
                             <div className={classes.block}>
-                                <PostVideo image={ page.image } title={ page.title } video={ page.video } />
+                                <PostVideo image={ `${process.env.NEXT_PUBLIC_API_URL}${page.image}` } title={ page.title } video={ page.video } />
                             </div>
                         </div>
                     }

@@ -18,7 +18,7 @@ class MinifySection extends Component {
                             { this.props.data.articles.map((article, index) => {
                                 return (
                                     <div className="col-md-6" key={index}>
-                                        <PostMinifyColumn to={ article.url } image={ article.image } title={article.title} category={article.category_name} category_link={article.category_link} date={article.date}></PostMinifyColumn>
+                                        <PostMinifyColumn to={ article.url } image={`${process.env.NEXT_PUBLIC_API_URL}${article.image}`} title={article.title} category={article.category_name} category_link={article.category_link} date={article.date}></PostMinifyColumn>
                                     </div>
                                 )
                             }) }

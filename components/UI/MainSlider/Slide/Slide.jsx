@@ -22,7 +22,7 @@ class MainSlide extends Component {
 				<div className={'col-md-5 col-xl-4'}>
 					<div className={classes.image_block}>
 						<Link href={ this.props.data.url }>
-							<a className={classes.image}><img src={ this.props.data.image } alt={ this.props.data.title }/></a>
+							<a className={classes.image}><img src={`${process.env.NEXT_PUBLIC_API_URL}${this.props.data.image}`} alt={ this.props.data.title }/></a>
 						</Link>
 					</div>
 				</div>

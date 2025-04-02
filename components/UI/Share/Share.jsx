@@ -4,7 +4,7 @@ import { useRouter } 	from "next/router"
 function Share(props) {
     
     const router = useRouter()
-    const URL = `${process.env.APP_URL}${router.asPath}`
+    const URL = `${process.env.NEXT_PUBLIC_API_URL}${router.asPath}`
 
     const openLink = (e) => {
         let href = e.target.dataset.href

@@ -1,13 +1,14 @@
 import { useRouter } 	from "next/router"
 import Img	 			from "react-modal-image"
-import classes 			from './Page.module.sass'
-import SEO				from '../../components/SEO/SEO'
-import Head				from '../../components/UI/ArticleHeader/ArticleHeader'
-import More				from '../../components/SeeAlso/SeeAlso'
-import PageDesc			from '../../components/UI/PageDesc/PageDesc'
-import Content			from '../../components/Content/Content'
-import Gallery			from '../../components/Gallery/Gallery'
-import NotFound         from '../../components/NotFound/NotFound'
+import classes 			from './[category]/Page.module.sass'
+import SEO				from '../components/SEO/SEO'
+import Head				from '../components/UI/ArticleHeader/ArticleHeader'
+import More				from '../components/SeeAlso/SeeAlso'
+import PageDesc			from '../components/UI/PageDesc/PageDesc'
+import Content			from '../components/Content/Content'
+import Gallery			from '../components/Gallery/Gallery'
+import NotFound         from '../components/NotFound/NotFound'
+import CategoryButton from "../components/UI/CategoryButton/CategoryButton"
 
 function Page({ page }) {
 	const router = useRouter()
@@ -49,6 +50,18 @@ function Page({ page }) {
 				
 				<Head data={page} />
 
+                <div className="row">
+                    <div className={'col-md-4'}>
+                        <CategoryButton title={'Русский язык'} to={'/consolidation?locale=ru'} />
+                    </div>
+                    <div className={'col-md-4'}>
+                        <CategoryButton title={'English language'} to={'/consolidation?locale=en'} />
+                    </div>
+                    <div className={'col-md-4'}>
+                        <CategoryButton title={'Қазақ тілі'} to={'/consolidation?locale=kz'} />
+                    </div>
+                </div>
+
 				<div className={classes.article}>
 					<div className="row">
 						
@@ -80,9 +93,14 @@ function Page({ page }) {
 
 export async function getServerSideProps(ctx) {
 	const layout	= await (await fetch(`${process.env.API_URL}/api/layout`)).json()
+
+    const locale = ctx.query.locale || 'ru'
 	
-	const response	= await fetch(`${process.env.API_URL}/api/c/article/${ctx.query.category}/${ctx.query.page}`)
+	const response	= await fetch(`${process.env.API_URL}/api/c/article_id/${process.env.consolidation_id}?locale=${locale}`)
 	const page		= await response.json()
+
+    console.log(page);
+    
 
 	// Pass data to the page via props
 	return { props: {layout, page} }

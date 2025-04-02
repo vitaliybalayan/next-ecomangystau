@@ -19,7 +19,7 @@ class Video extends Component {
                                 return (
                                     <div className="col-md-4" key={index}>
                                         <div className={classes.block}>
-                                            <PostVideo image={ article.image } title={ article.title } video={ article.video }></PostVideo>
+                                            <PostVideo image={`${process.env.NEXT_PUBLIC_API_URL}${article.image}`} title={ article.title } video={ article.video }></PostVideo>
                                         </div>
                                     </div>
                                 )

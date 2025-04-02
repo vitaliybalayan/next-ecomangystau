@@ -20,7 +20,7 @@ class LastetSection extends Component {
                                 return (
                                     <div className="col-xl-4 col-lg-6" key={index}>
                                         <div className={classes.block}>
-                                            <PostColumn to={ article.url } image={ article.image } title={article.title} desc={article.desc} date={article.footer}></PostColumn>
+                                            <PostColumn to={ article.url } image={`${process.env.NEXT_PUBLIC_API_URL}${article.image}`} title={article.title} desc={article.desc} date={article.footer}></PostColumn>
                                         </div>
                                     </div>
                                 )
