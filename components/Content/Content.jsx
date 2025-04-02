@@ -4,7 +4,7 @@ import Image	 			from "react-modal-image"
 function Content(props) {
     return (
         <div className={classes.body}>
-            { props.article.map((block, index) => {
+            { props.article?.map((block, index) => {
                 
                 if (block.type === 'paragraph') {
                     return <div className={'col-md-10 m-auto'} key={index}><p dangerouslySetInnerHTML={{__html: block.data.text}}></p></div>
@@ -24,7 +24,7 @@ function Content(props) {
                     return (
                         <div className={'col-md-10 m-auto'} key={index}>
                             <tag>
-                                { block.data.items.map((item, index_q) => {
+                                { block.data.items?.map((item, index_q) => {
                                     return <li dangerouslySetInnerHTML={{__html: item}} key={index_q}></li> 
                                 }) }
                             </tag>
