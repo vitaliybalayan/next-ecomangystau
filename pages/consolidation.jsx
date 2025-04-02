@@ -99,10 +99,6 @@ export async function getServerSideProps(ctx) {
 	const response	= await fetch(`${process.env.API_URL}/api/c/article_id/${process.env.consolidation_id}?locale=${locale}`)
 	const page		= await response.json()
 
-    console.log(page);
-    
-
-	// Pass data to the page via props
 	return { props: {layout, page} }
 }
 
